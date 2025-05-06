@@ -1,4 +1,4 @@
-import java.awt.*;
+package animals;
 
 public abstract class Animal {
     private Cell position;
