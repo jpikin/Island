@@ -1,21 +1,22 @@
 import java.util.Random;
 
 public class Cell {
-
+    private int[] position;
     private boolean coast;
     private boolean isPlant = false;
     private int plantCount = 0;
 
 
     public Cell(int x, int y, boolean coast) {
-        int[] position = new int[]{x, y};
-        plantCount = setPlants();
-        getIsPlant();
+        position = new int[]{x, y};
         this.coast = coast;
+        plantCount = setPlants();
+        getPlant();
+
 
     }
 
-    public void getIsPlant() {
+    public void getPlant() {
         isPlant = getPlantCount() != 0;
         }
 
@@ -33,5 +34,9 @@ public class Cell {
     }
     private boolean isCoast(){
         return coast;
+    }
+    //Для теста, удалить:
+    public String toString(){
+        return "Ячейка" + position[0] + " " + position[1] + " Берег: " + coast + " Растительность: " + plantCount;
     }
 }
