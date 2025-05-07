@@ -1,7 +1,9 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Island {
     private final Cell[][] field = new Cell[100][20];
+    private final List<Animal> allAnimalsOnTheIsland = new ArrayList<>();
 
 
     public Island() {
@@ -22,5 +24,10 @@ public class Island {
     public Cell getCell(int i, int j) {
         return field[i][j];
     }
-
+    public List<Animal> getAllAnimalsOnTheIsland() {
+        return allAnimalsOnTheIsland;
+    }
+    public void addAnimalToList(Animal animal) {
+        allAnimalsOnTheIsland.add(animal);
+    }
 }
