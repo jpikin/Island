@@ -39,4 +39,7 @@ public class Cell {
     public String toString(){
         return "Ячейка" + position[0] + " " + position[1] + " Берег: " + coast + " Растительность: " + plantCount;
     }
+    public int[] getPosition() {
+        return position;
+    }
 }
