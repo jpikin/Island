@@ -3,6 +3,7 @@
 public class Island {
     private final Cell[][] field = new Cell[100][20];
 
+
     public Island() {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
@@ -18,4 +19,8 @@ public class Island {
     public Cell[][] getField() {
         return field;
     }
+    public Cell getCell(int i, int j) {
+        return field[i][j];
+    }
+
 }

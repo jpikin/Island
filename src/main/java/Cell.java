@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Cell {
@@ -5,15 +7,13 @@ public class Cell {
     private boolean coast;
     private boolean isPlant = false;
     private int plantCount = 0;
-
+    private final List<Animal> animals = new ArrayList<>();
 
     public Cell(int x, int y, boolean coast) {
         position = new int[]{x, y};
         this.coast = coast;
         plantCount = setPlants();
         getPlant();
-
-
     }
 
     public void getPlant() {
@@ -32,14 +32,30 @@ public class Cell {
     public void setPlantCount(int plantCount){
         this.plantCount = plantCount;
     }
-    private boolean isCoast(){
+    public boolean isCoast(){
         return coast;
     }
     //Для теста, удалить:
     public String toString(){
-        return "Ячейка" + position[0] + " " + position[1] + " Берег: " + coast + " Растительность: " + plantCount;
+        return "Ячейка  " + position[0] + " " + position[1] + " Берег: " + coast + " Растительность: " + plantCount + " Население: " + isPopulated();
     }
     public int[] getPosition() {
         return position;
     }
+    public void setPosition(int[] position) {
+        this.position = position;
+    }
+    public List<Animal> getAnimals() {
+        return animals;
+    }
+    public void addAnimal(Animal animal) {
+        animals.add(animal);
+    }
+    public void removeAnimal(Animal animal) {
+        animals.remove(animal);
+    }
+    public boolean isPopulated() {
+        return !animals.isEmpty();
+    }
+
 }
